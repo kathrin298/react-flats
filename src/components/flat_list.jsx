@@ -1,9 +1,9 @@
 import React from 'react';
 import Flat from './flat';
 
-const FlatList = (props) => {
+const FlatList = ({ flats, selectFlat, selectedFlat }) => {
   return (
-    props.flats.map((flat, index) => {
+    flats.map((flat, index) => {
       return (
         <Flat
           name={flat.name}
@@ -12,10 +12,10 @@ const FlatList = (props) => {
           priceCurrency={flat.priceCurrency}
           lat={flat.lat}
           lng={flat.lng}
-          selectFlat={props.selectFlat}
+          selectFlat={selectFlat}
           index={index}
           key={flat.lat}
-          selected={props.selectedFlat.name === flat.name}
+          selected={selectedFlat.name === flat.name}
         />
       );
     })
