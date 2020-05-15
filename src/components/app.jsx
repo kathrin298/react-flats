@@ -5,6 +5,8 @@ import FlatList from './flat_list';
 import Marker from './marker';
 import flats from '../../data/flat';
 
+console.log(process.env.API);
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +36,7 @@ class App extends Component {
         </div>
         <div className="map-container">
           <GoogleMapReact
-            bootstrapURLKeys={{ key: 'AIzaSyDl1htE0jfMp6Rynr6PFZvn2bBkMROmrzc' }}
+            bootstrapURLKeys={{ key: process.env.API }}
             defaultCenter={this.center()}
             defaultZoom={12}
           >
